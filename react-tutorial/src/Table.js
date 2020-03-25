@@ -3,14 +3,19 @@ import React, { Component } from 'react'
 class Table extends Component {
 
     render() {
-        return (
-            <table>
+        const TableHeader = () => {
+            return (
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>Job</th>
                     </tr>
                 </thead>
+            )
+        }
+
+        const TableBody = () => {
+            return (
                 <tbody>
                     <tr>
                         <td>Charlie</td>
@@ -29,6 +34,13 @@ class Table extends Component {
                         <td>Bartender</td>
                     </tr>
                 </tbody>
+            )
+        }
+
+        return (
+            <table>
+                <TableHeader />
+                <TableBody />
             </table>
         )
     }
