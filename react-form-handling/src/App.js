@@ -6,6 +6,8 @@ function App() {
   const [state, setState] = useState({
     fname: "",
     lname: "",
+    message: "",
+    carBrand: "",
   });
 
   const handleChange = e => {
@@ -34,10 +36,31 @@ function App() {
             value={state.lname}
             onChange={handleChange} />
         </label>
+        <br/><br/>
+        <label>Your Message: {" "}
+          <textarea 
+            name="message"
+            value={state.message}
+            onChange={handleChange} />
+        </label>
+        <br/><br/>
+        <label>
+          Pick your favorite car brand:{" "}
+          <select
+            name="carBrand"
+            value={state.carBrand}
+            onChange={handleChange}>
+              <option value="mercedes">Mercedes</option>
+              <option value="bmw">BMW</option>
+              <option value="maserati">Maserati</option>
+              <option value="infinity">Infinity</option>
+              <option value="audi">Audi</option>
+          </select>
+        </label>
       </form>
-      <h5>
-        Name: {state.fname} {state.lname}
-      </h5>
+      <h5>Name: {state.fname} {state.lname}</h5>
+      <h5>Favorite car brand: {state.carBrand}</h5>
+      <p>Message: {state.message}</p>
     </div>
   );
 }
