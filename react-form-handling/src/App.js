@@ -1,24 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [state, setState] = useState({
+    fname: "",
+    lname: "",
+  });
+
+  const handleChange = e => {
+    setState({
+      ...state, // Reatribui todos os valores anteriores no novo estado
+      [e.target.name]: e.target.value, // Redefine o valor específico conforme houver alteração no formulário
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>React Form Handling</h1>
+      <form>
+        <label>First Name: {" "}
+          <input 
+            type="text"
+            name="fname"
+            value={state.fname}
+            onChange={handleChange} />
+        </label>
+        {" "}
+        <label>Last Name: {" "}
+          <input 
+            type="text"
+            name="lname"
+            value={state.lname}
+            onChange={handleChange} />
+        </label>
+      </form>
+      <h5>
+        Name: {state.fname} {state.lname}
+      </h5>
     </div>
   );
 }
