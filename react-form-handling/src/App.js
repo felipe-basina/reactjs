@@ -8,12 +8,16 @@ function App() {
     lname: "",
     message: "",
     carBrand: "",
+    isChecked: false,
+    gender: "",
+    price: 0,
   });
 
   const handleChange = e => {
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
     setState({
       ...state, // Reatribui todos os valores anteriores no novo estado
-      [e.target.name]: e.target.value, // Redefine o valor específico conforme houver alteração no formulário
+      [e.target.name]: value, // Redefine o valor específico conforme houver alteração no formulário
     });
   }
 
@@ -57,10 +61,56 @@ function App() {
               <option value="audi">Audi</option>
           </select>
         </label>
+        <br/><br/>
+        <label>
+          <input
+            type="checkbox"
+            name="isChecked"
+            checked={state.isChecked}
+            onChange={handleChange} />
+          {" "}
+          Is Checked?
+        </label>
+        <br /><br />
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked={state.gender === "male"}
+            onChange={handleChange} />
+          {" "}
+          Male
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            checked={state.gender === "female"}
+            onChange={handleChange} />
+          {" "}
+          Female
+        </label>
+        <br/><br/>
+        <label>
+          Price (between 0 and 50):
+          <input
+            type="range"
+            name="price"
+            min="0"
+            max="50"
+            value={state.price}
+            onChange={handleChange} />
+        </label>
       </form>
+      <h2>## Values input ##</h2>
       <h5>Name: {state.fname} {state.lname}</h5>
+      <h5>Message: {state.message}</h5>
       <h5>Favorite car brand: {state.carBrand}</h5>
-      <p>Message: {state.message}</p>
+      <h5>Is checked?: {state.isChecked ? "Yes" : "No"}</h5>
+      <h5>Gender selected: {state.gender}</h5>
+      <h5>Price: ${state.price}</h5>
     </div>
   );
 }
