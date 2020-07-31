@@ -44,3 +44,9 @@
 button {
   margin: 10px;
 }
+
+.textArea {
+  margin: 0px;
+  width: 447px;
+  height: 92px;
+}
