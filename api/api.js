@@ -5,8 +5,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Access-Control-Allow-Methods', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
 
@@ -41,3 +41,8 @@ app.post('/comments', function (req, res) {
 app.listen(3001, function() {
     console.log(`Server running on port 3001`);
 });
+
+/* 
+ * npm install
+ * nodemon start 
+*/
