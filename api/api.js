@@ -6,6 +6,7 @@ app.use(bodyParser.json());
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Methods', '*');
     next();
 });
 
@@ -29,7 +30,13 @@ app.post('/comments', function (req, res) {
 
     res.setHeader('Content-Type', 'application/json');
     res.send({id: nextId});
- });  
+ });
+ 
+ app.delete('/comments', function (req, res) {  
+    comments = new Array();
+    res.setHeader('Content-Type', 'application/json');
+    res.send({status: 204});
+ });
 
 app.listen(3001, function() {
     console.log(`Server running on port 3001`);
