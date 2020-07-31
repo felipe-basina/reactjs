@@ -87,6 +87,7 @@ class Form extends Component {
           (result) => {
             const comment = JSON.stringify(result);
             console.log(comment);
+            alert(comment);
           },
           (error) => {
             console.log(`Error ${error}`);
@@ -110,7 +111,7 @@ class Form extends Component {
             return (
               <li key={comment.id}>
                 {comment.comment} ::
-                <button onClick={() => showValue(comment.id)}>Print</button>
+                <button onClick={() => showValue(comment.id)}>Exibir comentário</button>
               </li>
             );
           })}
