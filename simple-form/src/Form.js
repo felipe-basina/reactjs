@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = { todos: [] };
+    this.state = { comments: [] };
   }
 
   save() {
@@ -36,7 +36,7 @@ class Form extends Component {
             temp.push({ id: comment.id, comment: comment.comment });
           });
           this.setState({
-            todos: temp,
+            comments: temp,
           });
         },
         (error) => {
@@ -77,11 +77,11 @@ class Form extends Component {
         />
         <button onClick={this.save.bind(this)}>Save</button>
         <ul>
-          {this.state.todos.map(function (todo, index) {
+          {this.state.comments.map(function (comment, index) {
             return (
-              <li key={todo.id}>
-                {todo.comment} ::
-                <button onClick={() => showValue(todo.id)}>Print</button>
+              <li key={comment.id}>
+                {comment.comment} ::
+                <button onClick={() => showValue(comment.id)}>Print</button>
               </li>
             );
           })}
