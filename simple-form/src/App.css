@@ -61,10 +61,19 @@ button {
 }
 
 .commentList {
-  margin-top: 90px;
+  margin-top: 20px;
   margin-left: 90px;
 }
 
 .commentActions {
   width: 435px;
+}
+
+.h1CommentList {
+  margin-top: 60px;
+  margin-left: 60px; 
+}
+
+.noStyleInBullet {
+  list-style-type: none;
 }

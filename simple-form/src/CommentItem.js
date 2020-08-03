@@ -18,7 +18,7 @@ class CommentItem extends Component {
     }
 
     return (
-      <li>
+      <li className="noStyleInBullet">
         {this.props.comment.comment} ::
         <button onClick={() => showValue(this.props.comment.id)}>
           Exibir comentário
