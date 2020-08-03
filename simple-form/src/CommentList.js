@@ -10,7 +10,7 @@ class CommentList extends Component {
             </div>
             <div className="commentList">
                 {this.props.comments.map((comment) => (
-                <CommentItem key={comment.id} comment={comment} />
+                 <CommentItem key={comment.id} comment={comment} />
                 ))}
             </div>
         </div>

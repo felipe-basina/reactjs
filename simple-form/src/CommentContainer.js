@@ -41,6 +41,7 @@ class CommentContainer extends React.Component {
       <div className="mainContainer">
         <CommentForm />
         <CommentDeleteAll />
+        <div className="verticalLine"></div>
         <CommentList comments={this.state.comments} />
       </div>
     );

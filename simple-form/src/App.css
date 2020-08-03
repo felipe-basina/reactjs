@@ -49,6 +49,7 @@ button {
   margin: 0px;
   width: 447px;
   height: 92px;
+  resize: none;
 }
 
 .mainContainer {
@@ -62,7 +63,7 @@ button {
 
 .commentList {
   margin-top: 20px;
-  margin-left: 90px;
+  margin-left: 60px;
 }
 
 .commentActions {
@@ -76,4 +77,24 @@ button {
 
 .noStyleInBullet {
   list-style-type: none;
+}
+
+.verticalLine {
+  border-left: 3px solid grey;
+  height: 500px;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.commentShow {
+  line-height: 50px;
+}
+
+.containerItemFull {
+  display: flex;
+  margin-top: 40px;
+}
+
+.containerItem {
+  width: 400px;
 }

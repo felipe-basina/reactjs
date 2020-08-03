@@ -1,28 +1,16 @@
 import React, { Component } from "react";
+import CommentShow from "./CommentShow";
 
 class CommentItem extends Component {
   render() {
-    function showValue(id) {
-      fetch(`http://localhost:3001/comments/${id}`)
-        .then((res) => res.json())
-        .then(
-          (result) => {
-            const comment = JSON.stringify(result);
-            console.log(comment);
-            alert(comment);
-          },
-          (error) => {
-            console.log(`Error ${error}`);
-          }
-        );
-    }
-
     return (
       <li className="noStyleInBullet">
-        {this.props.comment.comment} ::
-        <button onClick={() => showValue(this.props.comment.id)}>
-          Exibir comentário
-        </button>
+          <div className="containerItemFull">
+            <div className="containerItem">
+                {this.props.comment.comment}
+            </div>
+            <CommentShow comment={this.props.comment} />
+          </div>
       </li>
     );
   }

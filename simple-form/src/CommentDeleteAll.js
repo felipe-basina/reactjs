@@ -20,7 +20,7 @@ class CommentDeleteAll extends Component {
 
     render() {
         return (
-            <div class="deleteAll">
+            <div className="deleteAll">
                 <button onClick={this.deleteAll.bind(this)} className="commentActions">Remover comentários</button>
             </div>
         );
