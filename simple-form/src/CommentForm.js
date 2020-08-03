@@ -5,22 +5,6 @@ class CommentForm extends Component {
     enableButton: false,
   };
 
-  deleteAll() {
-    const requestOptions = {
-      method: "DELETE",
-    };
-    fetch("http://localhost:3001/comments", requestOptions)
-      .then((response) => response.json())
-      .then(
-        (result) => {
-          console.log(result);
-        },
-        (error) => {
-          console.log(`Error ${error}`);
-        }
-      );
-  }
-
   save() {
     const requestOptions = {
       method: "POST",
@@ -62,10 +46,11 @@ class CommentForm extends Component {
           }}
           onChange={this.handleChange.bind(this)}
         />
-        <button onClick={this.save.bind(this)} disabled={!enableButton}>
-          Cadastrar
-        </button>
-        <button onClick={this.deleteAll.bind(this)}>Remover comentários</button>
+        <div>
+          <button onClick={this.save.bind(this)} disabled={!enableButton} className="commentActions">
+            Cadastrar
+          </button>
+        </div>
       </div>
     );
   }

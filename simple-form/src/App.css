@@ -50,3 +50,21 @@ button {
   width: 447px;
   height: 92px;
 }
+
+.mainContainer {
+  display: flex;
+}
+
+.deleteAll {
+  margin-top: 245px;
+  margin-left: -487px;
+}
+
+.commentList {
+  margin-top: 90px;
+  margin-left: 90px;
+}
+
+.commentActions {
+  width: 435px;
+}

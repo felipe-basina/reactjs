@@ -1,5 +1,6 @@
 import React from "react";
 import CommentForm from "./CommentForm";
+import CommentDeleteAll from "./CommentDeleteAll";
 import CommentList from "./CommentList";
 
 class CommentContainer extends React.Component {
@@ -37,8 +38,9 @@ class CommentContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="mainContainer">
         <CommentForm />
+        <CommentDeleteAll />
         <CommentList comments={this.state.comments} />
       </div>
     );
