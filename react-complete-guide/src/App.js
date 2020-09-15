@@ -6,9 +6,9 @@ class App extends Component {
 
     state = {
         persons: [
-            {name: "Name 1", age: 28},
-            {name: "Name 2", age: 25},
-            {name: "Name 3", age: 22},
+            {id: 'dsasda', name: "Name 1", age: 28},
+            {id: 'wdcsasw', name: "Name 2", age: 25},
+            {id: 'asashhh1', name: "Name 3", age: 22},
         ],
         showPersons: false,
     }
@@ -24,14 +24,31 @@ class App extends Component {
         });
     }
 
-    nameChangeHandler = (event) => {
-        this.setState({
-            persons: [
-                {name: "Name 1", age: 28},
-                {name: event.target.value, age: 25},
-                {name: "Name 3", age: 22},
-            ],
+    nameChangeHandler = (event, id) => {
+        const personIndex = this.state.persons.findIndex(person => {
+            return person.id === id;
         });
+
+        const person = {
+            ...this.state.persons[personIndex]
+        };
+
+        person.name = event.target.value;
+
+        const persons = [...this.state.persons];
+        persons[personIndex] = person;
+
+        this.setState({
+            persons: persons,
+        });
+    }
+
+    deletePersonHandler = (personIndex) => {
+        const persons = [...this.state.persons];
+        persons.splice(personIndex, 1);
+        this.setState({
+            persons: [...persons],
+        })
     }
 
     togglePersonsHandler = () => {
@@ -56,11 +73,14 @@ class App extends Component {
             persons = (
                 <div>
                     {
-                        this.state.persons.map(person => {
+                        this.state.persons.map((person, index) => {
                             return (
                                 <Person
+                                    click={() => this.deletePersonHandler(index)}
+                                    changed={(event) => this.nameChangeHandler(event, person.id)}
                                     name={person.name}
-                                    age={person.age} />
+                                    age={person.age}
+                                    key={person.id} />
                             );
                         })
                     }
