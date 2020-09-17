@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 //import Radium, {StyleRoot} from 'radium';
 import Person from './Person/Person';
 
-const StyledButton = styled.button`
+/*const StyledButton = styled.button`
                                 background-color: ${props => props.alt ? 'red' : 'green'};
                                 color: white;
                                 font: inherit;
@@ -17,6 +17,8 @@ const StyledButton = styled.button`
                                     color: black;
                                 }
                                 `;
+Gera o componente: <StyledButton>
+*/
 
 
 class App extends Component {
@@ -76,7 +78,7 @@ class App extends Component {
     }
 
     render() {
-        const style = {
+        /*const style = {
             backgroundColor: 'green',
             color: 'white',
             font: 'inherit',
@@ -88,7 +90,7 @@ class App extends Component {
                 backgroundColor: 'lightgreen',
                 color: 'black',
             }
-        }
+        }*/
 
         let persons = null;
 
@@ -132,10 +134,10 @@ class App extends Component {
                 <div className="App">
                     <h1>Hi, I'm a React App.</h1>
                     <p className={classes.join(' ')}>This is really working!</p>
-                    <StyledButton
-                        alt={this.state.showPersons}
+                    <button
+                        className="button"
                         onClick={this.togglePersonsHandler}>Toggle Persons
-                    </StyledButton>
+                    </button>
                     {persons}
                 </div>
             //</StyleRoot>
