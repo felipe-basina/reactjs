@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Layout from './components/Layout/Layout'
+import BurderBuilder from "./containers/BurderBuilder/BurderBuilder";
 
 class App extends Component {
 
@@ -8,7 +9,7 @@ class App extends Component {
         return (
           <div>
               <Layout>
-                  <p>Test</p>
+                  <BurderBuilder />
               </Layout>
           </div>
         );
