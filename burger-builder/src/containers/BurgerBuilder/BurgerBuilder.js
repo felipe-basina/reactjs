@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Aux from './../../hoc/Aux';
 import Burger from './../../components/Burger/Burger';
 
-class BurderBuilder extends Component {
+class BurgerBuilder extends Component {
 
     state = {
         ingredients: {
@@ -26,4 +26,4 @@ class BurderBuilder extends Component {
 
 }
 
-export default BurderBuilder;
+export default BurgerBuilder;
